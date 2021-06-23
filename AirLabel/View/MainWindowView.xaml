@@ -1,0 +1,36 @@
+﻿<Window x:Class="AirLabel.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirLabel"
+        xmlns:localViewModel="clr-namespace:AirLabel.ViewModel"
+        xmlns:localView="clr-namespace:AirLabel.View"
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type localViewModel:PrintLabelViewModel}">
+            <localView:PrintLabelView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="97*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FFE5E5E5">
+            <Menu Name="customize_menu" IsMainMenu="False">
+                <MenuItem Name="menuInOutbound" Header="Operating"    >
+                    <MenuItem   Header="Labelling"    Command="{Binding LoadPrintLabelCommand}" />
+                    <MenuItem  Header="Other"   Command="{Binding LoadCargoOutCommand}" />
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1" Background="#FFE5E5E5">
+            <ContentControl Content="{Binding Path=CurrentViewModel}"></ContentControl>
+            <!--
+            <Frame x:Name="MainFrame"  Grid.Row="0" Content="{Binding FrameSource}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10" NavigationUIVisibility="Hidden"/>
+            -->
+        </Grid>
+    </Grid>
+</Window>

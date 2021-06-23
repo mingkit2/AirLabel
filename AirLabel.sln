@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirLabel", "AirLabel\AirLabel.csproj", "{3E13F65C-8A02-4F65-8377-61D69B3288BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E13F65C-8A02-4F65-8377-61D69B3288BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E13F65C-8A02-4F65-8377-61D69B3288BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E13F65C-8A02-4F65-8377-61D69B3288BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E13F65C-8A02-4F65-8377-61D69B3288BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45157273-40A8-4D7F-9C9A-A076E7D86FF3}
+	EndGlobalSection
+EndGlobal

@@ -51,7 +51,6 @@ namespace AirLabel.ViewModel
         {
             WindowsTitle = "Print Label";
             CurrentViewModel = new PrintLabelViewModel(this);
-            
         }
 
 

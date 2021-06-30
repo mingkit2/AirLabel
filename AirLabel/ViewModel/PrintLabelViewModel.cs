@@ -8,7 +8,11 @@ using Microsoft.Toolkit.Mvvm;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using AirLabel.View;
-
+using ZXing; // for BarcodeWriter
+using System.Windows.Forms.Integration;
+using System.IO;
+using System.Drawing.Imaging;
+using ZXing.OneD;
 
 namespace AirLabel.ViewModel
 {
@@ -20,49 +24,75 @@ namespace AirLabel.ViewModel
 
         
         private MainWindowViewModel _parentWindow;
-        private ReportViewer _reportviewer;
+        public ReportViewer reportViewer;
+        public WindowsFormsHost Viewer { get; set; }
 
         //private ReportViewer _reportviewer;
 
         public PrintLabelViewModel(MainWindowViewModel parentWindow)
         {
             _parentWindow = parentWindow;
+            WindowsFormsHost windowsFormsHost = new WindowsFormsHost();
+            reportViewer = new ReportViewer();
+            windowsFormsHost.Height = 800;
+            windowsFormsHost.Width = 1000;
+            windowsFormsHost.Child = reportViewer;
+            this.Viewer = windowsFormsHost;
             //this._reportviewer = window._reportviewer;
             PreviewCommand = new RelayCommand(PreviewLabel);
+            OnPropertyChanged("Viewer");
+
         }
 
         private void PreviewLabel()
         {
-
-            //_reportviewer.LocalReport.DataSources.Clear();
-
-            //var rpds_model1 = new ReportDataSource() { Name = "dsShopReport", Value = dataShopReport };
-
-            //_reportviewer.LocalReport.DataSources.Add(rpds_model1);
-
-            ReportParameter[] parameters = new ReportParameter[1];
+            
+            ReportParameter[] parameters = new ReportParameter[2];
             parameters[0] = new ReportParameter("pAirWayBillNo", AirWayBillNo);
-
-            _reportviewer.LocalReport.EnableExternalImages = true;
-
-            //string _path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
-            //string ContentStart = _path + @"\MVVMNvocc\Reports\DeliveryOrder.rdlc";
+            parameters[1] = new ReportParameter("pAirWayBillNoBarcode", ImageToBase64(AirWayBillNo));
+            reportViewer.LocalReport.EnableExternalImages = true;
 
             string ReportName = "AirLabel";
-            //string ReportName = "DeliveryReceipt";
-            _reportviewer.LocalReport.ReportPath = string.Format("Report/{0}.rdlc", ReportName);
+            reportViewer.LocalReport.ReportPath = string.Format("Report/{0}.rdlc", ReportName);
 
-
-            //_reportviewer.LocalReport.ReportPath = ContentStart;
-
-            //string ReportName = "ShippingOrder";
-            //_reportviewer.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", ReportName); ;
-
-            _reportviewer.SetDisplayMode(DisplayMode.PrintLayout);
-            _reportviewer.LocalReport.SetParameters(parameters);
-            _reportviewer.Refresh();
-            _reportviewer.RefreshReport();
+            reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer.LocalReport.SetParameters(parameters);
+            reportViewer.Refresh();
+            reportViewer.RefreshReport();
+            OnPropertyChanged("Viewer");
         }
+
+        
+            public static string ImageToBase64(string AirWayBillNo)
+        {
+            var content = AirWayBillNo;
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new Code128EncodingOptions
+                {
+                    Height = 100,
+                    Width = 600,
+                    PureBarcode=true
+                }
+
+            };
+            System.Drawing.Bitmap bmp  = writer.Write(content);
+
+            string _base64String = null;
+            using (System.Drawing.Image _image = bmp)
+            {
+                using (MemoryStream _mStream = new MemoryStream())
+                {
+                    _image.Save(_mStream, ImageFormat.Jpeg);
+                    byte[] _imageBytes = _mStream.ToArray();
+                    _base64String = Convert.ToBase64String(_imageBytes);
+
+                    return _base64String;
+                }
+            }
+        }
+
     }
 
 }

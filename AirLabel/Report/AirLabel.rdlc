@@ -7,7 +7,7 @@
         <ReportItems>
           <Line Name="Line1">
             <Top>4.2037cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.36625cm</Width>
             <Style>
@@ -18,7 +18,7 @@
           </Line>
           <Line Name="Line2">
             <Top>6.1087cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.36625cm</Width>
             <ZIndex>1</ZIndex>
@@ -30,7 +30,7 @@
           </Line>
           <Line Name="Line3">
             <Top>7.85495cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.28688cm</Width>
             <ZIndex>2</ZIndex>
@@ -42,7 +42,7 @@
           </Line>
           <Line Name="Line4">
             <Top>9.44875cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.28688cm</Width>
             <ZIndex>3</ZIndex>
@@ -54,7 +54,7 @@
           </Line>
           <Line Name="Line5">
             <Top>10.814cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.28688cm</Width>
             <ZIndex>4</ZIndex>
@@ -66,7 +66,7 @@
           </Line>
           <Line Name="Line6">
             <Top>12.084cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0cm</Height>
             <Width>9.28688cm</Width>
             <ZIndex>5</ZIndex>
@@ -78,7 +78,7 @@
           </Line>
           <Line Name="Line7">
             <Top>6.13516cm</Top>
-            <Left>4.92337cm</Left>
+            <Left>5.01862cm</Left>
             <Height>1.68451cm</Height>
             <Width>0cm</Width>
             <ZIndex>6</ZIndex>
@@ -90,7 +90,7 @@
           </Line>
           <Line Name="Line8">
             <Top>10.814cm</Top>
-            <Left>7.26758cm</Left>
+            <Left>7.17233cm</Left>
             <Height>1.27cm</Height>
             <Width>0cm</Width>
             <ZIndex>7</ZIndex>
@@ -102,8 +102,8 @@
           </Line>
           <Line Name="Line9">
             <Top>12.084cm</Top>
-            <Left>5.9525cm</Left>
-            <Height>1.12496cm</Height>
+            <Left>6.04775cm</Left>
+            <Height>1.03039cm</Height>
             <Width>0cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
@@ -131,9 +131,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>4.35716cm</Top>
-            <Left>0.24553cm</Left>
+            <Left>0.34078cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.84396cm</Width>
+            <Width>3.63243cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -164,9 +164,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>6.21453cm</Top>
-            <Left>0.24553cm</Left>
+            <Left>0.34078cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.31479cm</Width>
+            <Width>2.94979cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -197,9 +197,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>6.22775cm</Top>
-            <Left>5.06498cm</Left>
+            <Left>5.16023cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.29375cm</Width>
+            <Width>3.95414cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -230,7 +230,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>12.19689cm</Top>
-            <Left>0.21379cm</Left>
+            <Left>0.30904cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
             <ZIndex>12</ZIndex>
@@ -263,7 +263,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>12.18631cm</Top>
-            <Left>6.11358cm</Left>
+            <Left>6.20883cm</Left>
             <Height>0.6cm</Height>
             <Width>1.94245cm</Width>
             <ZIndex>13</ZIndex>
@@ -296,9 +296,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>10.88456cm</Top>
-            <Left>7.44396cm</Left>
+            <Left>7.22171cm</Left>
             <Height>0.54708cm</Height>
-            <Width>2.10432cm</Width>
+            <Width>2.42182cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -329,9 +329,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>10.88456cm</Top>
-            <Left>0.18203cm</Left>
+            <Left>0.27728cm</Left>
             <Height>0.54708cm</Height>
-            <Width>1.38994cm</Width>
+            <Width>1.7339cm</Width>
             <ZIndex>15</ZIndex>
             <Style>
               <Border>
@@ -351,17 +351,29 @@
                 <TextRuns>
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
-                    <Style />
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <Format>'000 0000 0000'</Format>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Left(Parameters!pAirWayBillNo.Value,3) + " " + MID(Parameters!pAirWayBillNo.Value,4,4) + " " + right(Parameters!pAirWayBillNo.Value,4)</Value>
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <Format>'000 0000 0000'</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
             <Top>5.05037cm</Top>
-            <Left>0.42016cm</Left>
+            <Left>0.51541cm</Left>
             <Height>0.91722cm</Height>
-            <Width>8.59896cm</Width>
+            <Width>9.04875cm</Width>
             <ZIndex>16</ZIndex>
             <Style>
               <Border>
@@ -373,18 +385,36 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Image Name="Image2">
+            <Source>Database</Source>
+            <Value>=system.Convert.FromBase64String(Parameters!pAirWayBillNoBarcode.Value)</Value>
+            <MIMEType>image/jpeg</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.84349cm</Top>
+            <Left>0.79057cm</Left>
+            <Height>2.55833cm</Height>
+            <Width>8.3238cm</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
         </ReportItems>
-        <Height>13.5cm</Height>
+        <Height>13.32606cm</Height>
         <Style />
       </Body>
       <Width>10cm</Width>
       <Page>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <PageHeight>13.5cm</PageHeight>
+        <PageWidth>10.5cm</PageWidth>
+        <InteractiveHeight>0cm</InteractiveHeight>
+        <InteractiveWidth>10.5cm</InteractiveWidth>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -392,6 +422,10 @@
   </ReportSections>
   <ReportParameters>
     <ReportParameter Name="pAirWayBillNo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pAirWayBillNoBarcode">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -406,9 +440,15 @@
           <RowIndex>0</RowIndex>
           <ParameterName>pAirWayBillNo</ParameterName>
         </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>pAirWayBillNoBarcode</ParameterName>
+        </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>42e031c4-0dd2-4666-a909-516ce4b74cd1</rd:ReportID>
 </Report>

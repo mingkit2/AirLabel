@@ -26,5 +26,10 @@ namespace AirLabel.View
             //PrintLabelViewModel vm = new PrintLabelViewModel(this);
             //this.DataContext = vm;
         }
+
+        private void PreviewButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

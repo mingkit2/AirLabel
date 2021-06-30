@@ -41,15 +41,14 @@
                     <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
                     <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
                     <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <Button  Content="Preview" HorizontalAlignment="Left"  Height="30"  Width="100" Margin="10" Command="{Binding PreviewCommand}" />
+                    <Button  x:Name="PreviewButton" Content="Preview" HorizontalAlignment="Left"  Height="30"  Width="100" Margin="10" Command="{Binding PreviewCommand}" Click="PreviewButton_Click" />
                 </StackPanel>
             </Grid>
             
         </Grid>
         <Grid Grid.Column="1">
-                <WindowsFormsHost HorizontalAlignment="Stretch" Height="auto"  VerticalAlignment="Stretch" Width="auto" >
-                    <rdlcreport:ReportViewer x:Name="_reportviewer"  />
-                </WindowsFormsHost>
+                
+            <ContentPresenter Content="{Binding Viewer}" />
         </Grid>
     </Grid>
         

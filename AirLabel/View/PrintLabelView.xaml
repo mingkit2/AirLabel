@@ -21,8 +21,9 @@
             <Grid Grid.Column="0">
                 <StackPanel Orientation = "Vertical">
                     <Label Content = "Air Waybill No" Margin = "10" Width = "120" Height = "30" />
-                    <Label Content = "Destination" Margin = "10" Width = "120" Height = "30" />
                     <Label Content = "Total No of PCS" Margin = "10" Width = "120" Height = "30" />
+                    <Label Content = "Destination" Margin = "10" Width = "120" Height = "30" />
+                    <Label Content = "Name" Margin = "10" Width = "120" Height = "30" />
                     <Label Content = "HAWB No" Margin = "10" Width = "120" Height = "30" />
                     <Label Content = "Departure" Margin = "10" Width = "120" Height = "30" />
                     <Label Content = "House Destination" Margin = "10" Width = "120" Height = "30" />
@@ -35,13 +36,17 @@
                 <StackPanel Orientation = "Vertical">
  
                     <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"  Height = "30"  />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"  Height = "30"  />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <TextBox  Text="{Binding AirWayBillNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
-                    <Button  x:Name="PreviewButton" Content="Preview" HorizontalAlignment="Left"  Height="30"  Width="100" Margin="10" Command="{Binding PreviewCommand}" Click="PreviewButton_Click" />
+                    <TextBox  Text="{Binding PCS, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
+                    <TextBox  Text="{Binding Destination, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"  Height = "30"  />
+                    <StackPanel Orientation = "Horizontal">
+                        <TextBox  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"  Height = "30"  />
+                        <Button  Content=">>" HorizontalAlignment="Right"  Height="30"  Width="20" Margin="5" Command="{Binding OpenFileCommand}" Click="PreviewButton_Click" />
+                    </StackPanel>
+                    <TextBox  Text="{Binding HAWBNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
+                    <TextBox  Text="{Binding Departure, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
+                    <TextBox  Text="{Binding HouseDestination, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
+                    <TextBox  Text="{Binding HAWBPCS, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  HorizontalAlignment="Left" Margin="10" Width="100"   Height="30" />
+                    <Button   Content="Preview" HorizontalAlignment="Left"  Height="30"  Width="100" Margin="10" Command="{Binding PreviewCommand}" Click="PreviewButton_Click" />
                 </StackPanel>
             </Grid>
             

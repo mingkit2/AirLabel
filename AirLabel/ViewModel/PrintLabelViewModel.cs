@@ -20,9 +20,20 @@ namespace AirLabel.ViewModel
     {
 
         public IRelayCommand PreviewCommand { get; }
-        public string AirWayBillNo { get; set; }
+        public IRelayCommand OpenFileCommand { get; }
 
         
+        public string AirWayBillNo { get; set; }
+        public string Destination { get; set; }
+        public string PCS { get; set; }
+        public string HAWBNo { get; set; }
+        public string Departure { get; set; }
+        public string HouseDestination { get; set; }
+
+        public string HAWBPCS { get; set; }
+
+
+
         private MainWindowViewModel _parentWindow;
         public ReportViewer reportViewer;
         public WindowsFormsHost Viewer { get; set; }
@@ -47,9 +58,17 @@ namespace AirLabel.ViewModel
         private void PreviewLabel()
         {
             
-            ReportParameter[] parameters = new ReportParameter[2];
+            ReportParameter[] parameters = new ReportParameter[9];
             parameters[0] = new ReportParameter("pAirWayBillNo", AirWayBillNo);
             parameters[1] = new ReportParameter("pAirWayBillNoBarcode", ImageToBase64(AirWayBillNo));
+            parameters[2] = new ReportParameter("pPCS", PCS);
+            parameters[3] = new ReportParameter("pDestination", Destination);
+            parameters[4] = new ReportParameter("pHAWBNo", HAWBNo);
+            parameters[5] = new ReportParameter("pDeparture", Departure);
+            parameters[6] = new ReportParameter("pHouseDestination", HouseDestination);
+            parameters[7] = new ReportParameter("pHAWBPCS", HAWBPCS);
+            parameters[8] = new ReportParameter("pHAWBNoBarcode", ImageToBase64(HAWBNo));
+
             reportViewer.LocalReport.EnableExternalImages = true;
 
             string ReportName = "AirLabel";
